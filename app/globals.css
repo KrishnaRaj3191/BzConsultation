@@ -136,12 +136,13 @@
 .bg-img {
   background-image: url("/header-bg.jpg");
   position: absolute;
-  opacity: 0.4;
+  opacity: .40;
   inset: 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
+  
 
 }
 
@@ -188,6 +189,14 @@ h1{
     align-items: center;
     transition: 500ms
 }
+
+/* global.css */
+Input {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+
 
 @media (max-width: 480px) {
   h1 {

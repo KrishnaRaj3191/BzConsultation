@@ -265,7 +265,7 @@ const ConsultationForm = () => {
             <div className="mt-8">
               <label className="font-medium">Select Time</label>
 
-              <div className="space-y-3 max-h-[300px] overflow-y-auto mt-6">
+              <div className="space-y-3 max-h-[300px] overflow-y-auto  mt-6 flex flex-col items-center">
                 {[
                   "Select Time",
                   "9:30 am",
@@ -284,13 +284,16 @@ const ConsultationForm = () => {
                 ].map((time) => (
                   <label
                     key={time}
-                    className="block p-3 border-black dark:border-white border w-full text-center cursor-pointer active:bg-gray-200"
+                    className={`block p-3 border-black dark:border-white border md:w-[300px] w-[200px] text-center cursor-pointer 
+      hover:bg-gray-200 dark:hover:text-black
+      ${time === "Select Time" ? "bg-gray-200 text-black cursor-not-allowed" : ""}`}
                   >
                     <Input
                       type="radio"
                       name="time"
                       value={time}
                       className="hidden"
+                      disabled={time === "Select Time"}
                     />
 
                     {time}
