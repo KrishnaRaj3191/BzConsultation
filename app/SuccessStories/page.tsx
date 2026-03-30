@@ -1,8 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 import BreadcrumbWrapper from '@/components/BreadcrumbWrapper';
 
 interface CardItem {
@@ -23,15 +22,9 @@ const cards: CardItem[] = [
   { title: "Finance", img: "/img9.jpg", desc: "Transforming Finance: Cutting-Edge Solutions." },
 ];
 
-const SuccessStories: React.FC = () => {
-  const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState<boolean>(false);
+const SuccessStories = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
+  
   const handleCardClick = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
@@ -51,7 +44,7 @@ const SuccessStories: React.FC = () => {
          <section className="w-full bg-white dark:bg-black py-10 md:py-20 lg:py-[100px] transition-colors duration-300">
       <div className="max-w-[1220px] mx-auto px-5 sm:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center">
           {cards.map((card, index) => {
             const isActive = activeIndex === index;
 
@@ -59,7 +52,7 @@ const SuccessStories: React.FC = () => {
               <div
                 key={index}
                 onClick={() => handleCardClick(index)}
-                className={`group relative mb-6 bg-gray-100 dark:bg-[#1E1E1E] rounded-[10px] overflow-hidden 
+                className={`group relative mb-7 bg-gray-100 dark:bg-[#1E1E1E] rounded-[10px] overflow-hidden 
                            w-full max-w-[400px] md:max-w-full min-h-[400px] md:min-h-[450px] flex flex-col cursor-pointer 
                            transition-all duration-300 shadow-lg hover:shadow-2xl shadow-black/10
                            ${isActive ? 'bg-white dark:bg-[#252525]' : 'hover:bg-white dark:hover:bg-[#252525]'}`}
@@ -103,8 +96,8 @@ const SuccessStories: React.FC = () => {
                       Know More &gt;&gt;
                     </button>
                   </div>
-                </div>
 
+                </div>
                 <div className="absolute inset-x-0 bottom-0 h-4 bg-inherit z-10" />
               </div>
             );
@@ -112,27 +105,6 @@ const SuccessStories: React.FC = () => {
         </div>
       </div>
 
-      {mounted && (
-        <div className="fixed bottom-4 left-4 z-50">
-          <button
-            onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-            className="group relative cursor-pointer border border-white dark:border-white hover:border-black
-                       px-3 py-2 text-[14px] font-extrabold overflow-hidden
-                       bg-black text-white transition-colors duration-500 shadow-lg"
-          >
-            <span 
-              className="absolute top-1/2 left-1/2 w-[400%] h-[400%] bg-white 
-                         -translate-x-1/2 -translate-y-1/2 rotate-45 
-                         scale-0 group-hover:scale-100 
-                         transition-transform duration-500 ease-out"
-            />
-
-            <span className="relative z-10 group-hover:text-orange-500 transition-colors duration-500">
-              {resolvedTheme === 'dark' ? 'Light/Dark' : 'Light/Dark'}
-            </span>
-          </button>
-        </div>
-      )}
     </section>
 
      </>
