@@ -3,12 +3,9 @@ import React, { useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import { FaCheck } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaArrowUpLong } from "react-icons/fa6";
 import { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
 import BreadcrumbWrapper from "@/components/BreadcrumbWrapper";
@@ -98,7 +95,7 @@ const page = () => {
       </section>
 
       {/*SECOND SECTION  */}
-      <div className="theme-bg theme-text  px-6 py-16 sm:py-10 text-center  sm:mt-0 md:-mt-10 md:mb-12">
+      <div className="theme-bg theme-text  px-6 py-16 sm:py-10 text-center  lg:mt-8 md:mt-6 mt-6">
         <div className="flex justify-center mt-10 sm:mt-16 ">
           <span className="w-2 h-2 -mt-5 bg-orange-400 rounded-full text-2xl"></span>
         </div>
@@ -113,8 +110,8 @@ const page = () => {
         </h1>
       </div>
 
-      {/*  CARDS */}
-      <div className="w-full theme-bg lg:-mt-12  md:-mt-12 px-0 sm:px-4 md:px-6">
+      {/* mapping cards */}
+      <div className="w-full theme-bg lg:mt-12  md:-mt-12 px-0 sm:px-4 md:px-6">
         <div
           data-aos="fade-up"
           className="max-w-7xl mx-5 my-5 -mt-9 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 "
@@ -166,13 +163,13 @@ const page = () => {
       </div>
 
       {/* grid */}
-      <div className="w-full md:-mt-13 sm:-mt-10 -mt-10  lg:-mt-5 theme-bg py-16 md:py-20 px-6 md:px-10 lg:px-20 overflow-hidden ">
+      <div className="w-full md:-mt-13 sm:-mt-10 -mt-10  lg:-mt-5 theme-bg py-16 md:py-20 px-6 md:px-10 lg:px-10 overflow-hidden ">
         <div
           className="max-w-7xl mx-auto 
     flex flex-col 
     lg:flex-row 
     items-center 
-    gap-14 lg:gap-20"
+    gap-18 lg:gap-22"
         >
           {/* ================= LEFT CONTENT ================= */}
           <div data-aos="fade-right" className="w-full  lg:w-1/2">
@@ -192,16 +189,16 @@ const page = () => {
               {/* Item */}
               <div className="flex items-start gap-5 group">
                 <div
-                  className="w-14 h-14 flex-shrink-0 
-            bg-[#101010] rounded-full 
-            flex items-center justify-center 
-            transition-all duration-300
-            group-hover:bg-orange-400 hover:text-white"
+                  className="group w-14 h-14 flex-shrink-0 
+  bg-[#101010] rounded-full 
+  flex items-center justify-center 
+  transition-all duration-300 
+  group-hover:bg-orange-400"
                 >
                   <FaCheck
                     className="text-orange-400 text-lg 
-              transition-colors duration-300 
-            hover:text-white"
+    transition-colors duration-300 
+    group-hover:text-white "
                   />
                 </div>
 
@@ -220,16 +217,16 @@ const page = () => {
               {/* Item */}
               <div className="flex items-start gap-5 group">
                 <div
-                  className="w-14 h-14 flex-shrink-0 
-            bg-[#101010] rounded-full 
-            flex items-center justify-center 
-            transition-all duration-300
-           group-hover:bg-orange-400"
+                  className="group w-14 h-14 flex-shrink-0 
+  bg-[#101010] rounded-full 
+  flex items-center justify-center 
+  transition-all duration-300 
+  group-hover:bg-orange-400"
                 >
                   <FaCheck
                     className="text-orange-400 text-lg 
-              transition-colors duration-300 
-            hover:text-white "
+    transition-colors duration-300 
+    group-hover:text-white "
                   />
                 </div>
 
@@ -248,16 +245,16 @@ const page = () => {
               {/* Item */}
               <div className="flex items-start gap-5 group">
                 <div
-                  className="w-14 h-14 flex-shrink-0 
-            bg-[#101010] rounded-full 
-            flex items-center justify-center 
-            transition-all duration-300
-            group-hover:bg-orange-400"
+                  className="group w-14 h-14 flex-shrink-0 
+  bg-[#101010] rounded-full 
+  flex items-center justify-center 
+  transition-all duration-300 
+  group-hover:bg-orange-400"
                 >
                   <FaCheck
                     className="text-orange-400 text-lg 
-              transition-colors duration-300 
-              hover:text-white"
+    transition-colors duration-300 
+    group-hover:text-white "
                   />
                 </div>
 
@@ -309,9 +306,9 @@ const page = () => {
 
       {/* cards */}
       <div
-        className="w-full h-[1380px] sm:h-[1380px] md:h-[1350px] lg:h-[1070px] theme-bg
+        className="w-full theme-bg 
 py-12 sm:py-14 md:py-16
-px-4 sm:px-6 md:px-8 
+px-2 sm:px-3 md:px-4
  lg:-mt-[20px]  
 "
       >
@@ -321,14 +318,15 @@ px-4 sm:px-6 md:px-8
             <img
               src="/ux_1.jpg"
               alt="UX Design"
-              className="w-full h-[300px] object-cover"
+              className="w-full h-[350px] object-cover"
             />
 
             {/* Orange Circle */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="w-56 h-56 rounded-full bg-orange-400/80 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 p-4">
-                <p className="text-white font-extrabold text-2xl sm:text-3xl text-center leading-snug break-words">
-                  UX/UI <br /> Design
+                <p className="text-white font-extrabold text-center leading-[1.1]">
+                  <span className="block text-2xl sm:text-3xl">UX/UI</span>
+                  <span className="block text-2xl sm:text-3xl">Design</span>
                 </p>
               </div>
             </div>
@@ -352,13 +350,15 @@ px-4 sm:px-6 md:px-8
             <img
               src="/ux_2.jpg"
               alt="UX Design 2"
-              className="w-full h-[300px] object-cover"
+              className="w-full h-[350px] object-cover"
             />
 
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="w-56 h-56 rounded-full bg-orange-400/80 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 p-4">
-                <p className="text-white font-extrabold text-2xl sm:text-3xl text-center leading-snug break-words">
-                  On Demand <br /> Product <br /> Team
+                <p className="text-white font-extrabold text-center leading-[1.1]">
+                  <span className="block text-2xl sm:text-3xl">On Demand</span>
+                  <span className="block text-2xl sm:text-3xl">Product</span>
+                  <span className="block text-2xl sm:text-3xl">Team</span>
                 </p>
               </div>
             </div>
@@ -381,13 +381,16 @@ px-4 sm:px-6 md:px-8
             <img
               src="/ux_3.jpg"
               alt="UX Design 3"
-              className="w-full h-[300px] object-cover"
+              className="w-full h-[350px] object-cover"
             />
 
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="w-56 h-56 rounded-full bg-orange-400/80 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 p-4">
-                <p className="text-white font-extrabold text-2xl sm:text-3xl text-center leading-snug break-words">
-                  Mobile App <br /> Development
+                <p className="text-white font-extrabold text-center leading-[1.1]">
+                  <span className="block text-2xl sm:text-3xl">Mobile App</span>
+                  <span className="block text-2xl sm:text-3xl">
+                    Development
+                  </span>
                 </p>
               </div>
             </div>
@@ -410,13 +413,16 @@ px-4 sm:px-6 md:px-8
             <img
               src="/ux_4.jpg"
               alt="UX Design 4"
-              className="w-full h-[300px] object-cover"
+              className="w-full h-[350px] object-cover"
             />
 
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="w-56 h-56 rounded-full bg-orange-400/80 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 p-4">
-                <p className="text-white font-extrabold text-2xl sm:text-3xl text-center leading-snug break-words">
-                  Web <br /> Development
+                <p className="text-white font-extrabold text-center leading-[1.1]">
+                  <span className="block text-2xl sm:text-3xl">Web</span>
+                  <span className="block text-2xl sm:text-3xl">
+                    Development
+                  </span>
                 </p>
               </div>
             </div>
@@ -435,38 +441,38 @@ px-4 sm:px-6 md:px-8
         </div>
       </div>
 
-      {/* marrrrr */}
-      <div className="bg-orange-400 p-5  -mt-150 mt-0 md:-mt-155 sm:-mt-155  font-semibold text-white text-xl ">
-        <Marquee gradient={false} speed={50} pauseOnHover={true}>
-          <span className="mr-10 tracking-wider">
+      <div className="bg-orange-400 p-5 mt-10 sm:mt-0 font-semibold text-white text-xl overflow-hidden">
+        <div className="flex whitespace-nowrap animate-marquee">
+          {/* original content */}
+          <span className="mx-5 tracking-wider">
             UNLOCKING YOUR FULL POTENTIAL
           </span>
-          <span className="mr-10 tracking-wider">
+          <span className="mx-5 tracking-wider">
             TURNING CONCEPTS INTO REALITY
           </span>
-          <span className="mr-10 tracking-wider">CULTIVATING CREATIVITY</span>
-          <span className="mr-10 tracking-wider">
+          <span className="mx-5 tracking-wider">CULTIVATING CREATIVITY</span>
+          <span className="mx-5 tracking-wider">
             EXPERTISE IN DESIGN AND DEVELOPMENT
           </span>
-          <span className="mr-10 tracking-wider">
+          <span className="mx-5 tracking-wider">
             REALIZING YOUR HIDDEN POTENTIAL
           </span>
-          <span className="mr-10 tracking-wider">
+          <span className="mx-5 tracking-wider">
             TRANSFORMING VISIONS INTO REALITY
           </span>
-          <span className="mr-10 tracking-wider">
+          <span className="mx-5 tracking-wider">
             FOSTERING CREATIVE INSPIRATION
           </span>
-          <span className="mr-10 tracking-wider">
+          <span className="mx-5 tracking-wider">
             CRAFTING IN DESIGN AND DEVELOPMENT
           </span>
-          <span className="mr-10 tracking-wider">
+          <span className="mx-5 tracking-wider">
             UNLEASHING YOUR MAXIMUM POTENTIAL
           </span>
-          <span className="mr-10 tracking-wider">
+          <span className="mx-5 tracking-wider">
             LET'S START WORKING TOGETHER
           </span>
-        </Marquee>
+        </div>
       </div>
     </>
   );
