@@ -480,15 +480,15 @@ const Home = () => {
       {/* text-content section */}
 
       <section className="w-full px-4 sm:px-6   bg-white dark:bg-black">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-15 mx-auto max-w-7xl">
-          <div className="flex flex-col gap-y-2 md:gap-y-2  md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-15 mx-auto max-w-7xl ">
+          <div className="flex flex-col gap-y-2 md:gap-y-2 text-[500px] md:text-left tracking-[0.5px] leading-[30px]">
             <span className=" w-2 h-2 rounded-full bg-yellow-600" />
 
-            <p className="dark:text-[#eaeaea] uppercase text-base">
+            <p className="dark:text-[#eaeaea] uppercase text-base tracking-[0.5px] leading-[30px]">
               What we’re offering
             </p>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px]  font-extrabold leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px]  font-bold tracking-[0.5px] leading-[30px]">
               What your business needs,
             </h2>
           </div>
@@ -496,17 +496,17 @@ const Home = () => {
           <div className="mt-6 md:mt-20">
             <ul className="flex flex-col gap-y-6 sm:gap-y-8 md:gap-y-10">
               <li
-                className="text-sm sm:text-base md:text-lg font-medium flex items-start gap-2"
+                className="text-sm sm:text-base md:text-lg font-medium flex text-xl items-start text-justify gap-2 tracking-[0.5px] leading-[30px]"
                 style={{ letterSpacing: "1px" }}
               >
-                <RxDotFilled className="min-w-[24px]" size={24} />
+                <RxDotFilled className="min-w-[24px]" size={24}  />
                 BzAnalytics works with the world's leading Enterprises, SMEs &
                 Startups – to plan, develop, test and expand their digital
                 initiatives.
               </li>
 
               <li
-                className="text-sm sm:text-base md:text-lg font-medium flex items-start gap-2"
+                className="text-sm sm:text-base md:text-lg font-medium flex items-start gap-2 tracking-[0.5px] leading-[30px]"
                 style={{ letterSpacing: "1px" }}
               >
                 <RxDotFilled className="min-w-[24px]" size={24} />
@@ -517,149 +517,202 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="w-full  bg-white dark:bg-black text-white py-20 px-6 md:px-12 lg:px-20">
-        {/* cards */}
-        <div
-          className="w-full theme-bg 
-py-12 sm:py-14 md:py-16
-px-4 sm:px-6 md:px-8
- lg:-mt-[20px]  
-"
-        >
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Card 1 */}
-            <div className="relative w-full max-w-sm overflow-hidden shadow-lg group cursor-pointer">
-              <img
-                src="/ux_1.jpg"
-                alt="UX Design"
-                className="w-full h-[350px] object-cover"
-              />
+      <section className="w-full bg-white dark:bg-black text-white py-20 px-6 md:px-12 lg:px-20">
+  {/* cards */}
+  <div className="w-full theme-bg py-12 sm:py-14 md:py-16 px-4 sm:px-6 md:px-8 lg:-mt-[20px]">
+    
+    <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      {/* Card 1 */}
+      <div className="relative w-full max-w-sm overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 ease-out hover:shadow-2xl">
+        
+        <img
+          src="/ux_1.jpg"
+          alt="UX Design"
+          className="w-full h-[350px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        />
 
-              {/* Orange Circle */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-56 h-56 rounded-full bg-orange-400/80 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 p-4">
-                  <p className="text-white font-extrabold text-center leading-[1.1]">
-                    <span className="block text-2xl sm:text-3xl">UX/UI</span>
-                    <span className="block text-2xl sm:text-3xl">Design</span>
-                  </p>
-                </div>
-              </div>
+        {/* Orange Circle */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-56 aspect-square flex-shrink-0 rounded-full bg-orange-400/80 
+          flex items-center justify-center p-4
 
-              {/* Black Overlay */}
-              <div className="absolute inset-0 bg-black/60 -translate-y-full flex flex-col items-center justify-center text-center p-4 transition-transform duration-500 group-hover:translate-y-0">
-                <p className="text-white mb-3 text-sm sm:text-base">
-                  Enhancing user experiences through research, wireframes, and
-                  prototypes, creating visually appealing and user-friendly
-                  interfaces.
-                </p>
-                <p className="flex items-center gap-2 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-orange-400 group">
-                  Read More
-                  <FaArrowRight className="transition-transform duration-300 ease-in-out rotate-[45deg] group-hover:rotate-[0deg]" />
-                </p>
-              </div>
-            </div>
+          transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
 
-            {/* Card 2 */}
-            <div className="relative w-full max-w-sm  overflow-hidden shadow-lg group cursor-pointer">
-              <img
-                src="/ux_2.jpg"
-                alt="UX Design 2"
-                className="w-full h-[350px] object-cover"
-              />
-
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-56 h-56 rounded-full bg-orange-400/80 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 p-4">
-                  <p className="text-white font-extrabold text-center leading-[1.1]">
-                    <span className="block text-2xl sm:text-3xl">
-                      On Demand
-                    </span>
-                    <span className="block text-2xl sm:text-3xl">Product</span>
-                    <span className="block text-2xl sm:text-3xl">Team</span>
-                  </p>
-                </div>
-              </div>
-
-              <div className="absolute inset-0 bg-black/60 -translate-y-full flex flex-col items-center justify-center text-center p-4 transition-transform duration-500 group-hover:translate-y-0">
-                <p className="text-white mb-3 text-sm sm:text-base">
-                  Flexible teams for custom software development, scaling, and
-                  extending your internal team's capabilities, led by dedicated
-                  developers and product owners.
-                </p>
-                <p className="flex items-center gap-2 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-orange-400 group">
-                  Read More
-                  <FaArrowRight className="transition-transform duration-300 ease-in-out rotate-[45deg] group-hover:rotate-[0deg]" />
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="relative w-full max-w-sm overflow-hidden shadow-lg group cursor-pointer">
-              <img
-                src="/ux_3.jpg"
-                alt="UX Design 3"
-                className="w-full h-[350px] object-cover"
-              />
-
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-56 h-56 rounded-full bg-orange-400/80 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 p-4">
-                  <p className="text-white font-extrabold text-center leading-[1.1]">
-                    <span className="block text-2xl sm:text-3xl">
-                      Mobile App
-                    </span>
-                    <span className="block text-2xl sm:text-3xl">
-                      Development
-                    </span>
-                  </p>
-                </div>
-              </div>
-
-              <div className="absolute inset-0 bg-black/60 -translate-y-full flex flex-col items-center justify-center text-center p-4 transition-transform duration-500 group-hover:translate-y-0">
-                <p className="text-white mb-3 text-sm sm:text-base">
-                  Building iOS and Android apps, including cross-platform
-                  development using Flutter, tailored for both consumer and
-                  enterprise needs.
-                </p>
-                <p className="flex items-center gap-2 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-orange-400 group">
-                  Read More
-                  <FaArrowRight className="transition-transform duration-300 ease-in-out rotate-[45deg] group-hover:rotate-[0deg]" />
-                </p>
-              </div>
-            </div>
-
-            {/* Card 4 */}
-            <div className="relative w-full max-w-sm overflow-hidden shadow-lg group cursor-pointer">
-              <img
-                src="/ux_4.jpg"
-                alt="UX Design 4"
-                className="w-full h-[350px] object-cover"
-              />
-
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-56 h-56 rounded-full bg-orange-400/80 flex items-center justify-center transition-opacity duration-500 group-hover:opacity-0 p-4">
-                  <p className="text-white font-extrabold text-center leading-[1.1]">
-                    <span className="block text-2xl sm:text-3xl">Web</span>
-                    <span className="block text-2xl sm:text-3xl">
-                      Development
-                    </span>
-                  </p>
-                </div>
-              </div>
-
-              <div className="absolute inset-0 bg-black/60 -translate-y-full flex flex-col items-center justify-center text-center p-4 transition-transform duration-500 group-hover:translate-y-0">
-                <p className="text-white mb-3 text-sm sm:text-base">
-                  Crafting websites, web applications, and custom software,
-                  along with creating web portals for specific business
-                  purposes.
-                </p>
-                <p className="flex items-center gap-2 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-orange-400 group">
-                  Read More
-                  <FaArrowRight className="transition-transform duration-300 text-white ease-in-out rotate-[45deg] group-hover:rotate-[0deg]" />
-                </p>
-              </div>
-            </div>
+          group-hover:scale-x-125 group-hover:scale-y-75
+          group-hover:translate-y-40
+          group-hover:opacity-0
+          ">
+            <p className="text-white font-extrabold text-center leading-[1.1]">
+              <span className="block text-2xl sm:text-3xl">UX/UI</span>
+              <span className="block text-2xl sm:text-3xl">Design</span>
+            </p>
           </div>
         </div>
-      </section>
+
+        {/* Black Overlay */}
+        <div className="absolute inset-0 bg-black/60 
+        flex flex-col items-center justify-center text-center p-4
+
+        -translate-y-[105%]
+        transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+        delay-200
+
+        group-hover:translate-y-0">
+          <p className="text-white mb-3 text-sm sm:text-base">
+            Enhancing user experiences through research, wireframes, and
+            prototypes, creating visually appealing and user-friendly
+            interfaces.
+          </p>
+          <p className="flex items-center gap-2 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-orange-400 group">
+            Read More
+            <FaArrowRight className="transition-transform duration-300 ease-in-out rotate-[45deg] group-hover:rotate-[0deg]" />
+          </p>
+        </div>
+      </div>
+
+      {/* Card 2 */}
+      <div className="relative w-full max-w-sm overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 ease-out hover:shadow-2xl">
+        
+        <img
+          src="/ux_2.jpg"
+          alt="UX Design 2"
+          className="w-full h-[350px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        />
+
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-56 aspect-square flex-shrink-0 rounded-full bg-orange-400/80 
+          flex items-center justify-center p-4
+
+          transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+
+          group-hover:scale-x-125 group-hover:scale-y-75
+          group-hover:translate-y-40
+          group-hover:opacity-0
+          ">
+            <p className="text-white font-extrabold text-center leading-[1.1]">
+              <span className="block text-2xl sm:text-3xl">On Demand</span>
+              <span className="block text-2xl sm:text-3xl">Product</span>
+              <span className="block text-2xl sm:text-3xl">Team</span>
+            </p>
+          </div>
+        </div>
+
+        <div className="absolute inset-0 bg-black/60 
+        flex flex-col items-center justify-center text-center p-4
+
+        -translate-y-[105%]
+        transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+        delay-200
+
+        group-hover:translate-y-0">
+          <p className="text-white mb-3 text-sm sm:text-base">
+            Flexible teams for custom software development, scaling, and
+            extending your internal team's capabilities, led by dedicated
+            developers and product owners.
+          </p>
+          <p className="flex items-center gap-2 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-orange-400 group">
+            Read More
+            <FaArrowRight className="transition-transform duration-300 ease-in-out rotate-[45deg] group-hover:rotate-[0deg]" />
+          </p>
+        </div>
+      </div>
+
+      {/* Card 3 */}
+      <div className="relative w-full max-w-sm overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 ease-out hover:shadow-2xl">
+        
+        <img
+          src="/ux_3.jpg"
+          alt="UX Design 3"
+          className="w-full h-[350px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        />
+
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-56 aspect-square flex-shrink-0 rounded-full bg-orange-400/80 
+          flex items-center justify-center p-4
+
+          transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+
+          group-hover:scale-x-125 group-hover:scale-y-75
+          group-hover:translate-y-40
+          group-hover:opacity-0
+          ">
+            <p className="text-white font-extrabold text-center leading-[1.1]">
+              <span className="block text-2xl sm:text-3xl">Mobile App</span>
+              <span className="block text-2xl sm:text-3xl">Development</span>
+            </p>
+          </div>
+        </div>
+
+        <div className="absolute inset-0 bg-black/60 
+        flex flex-col items-center justify-center text-center p-4
+
+        -translate-y-[105%]
+        transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+        delay-200
+
+        group-hover:translate-y-0">
+          <p className="text-white mb-3 text-sm sm:text-base">
+            Building iOS and Android apps, including cross-platform
+            development using Flutter, tailored for both consumer and
+            enterprise needs.
+          </p>
+          <p className="flex items-center gap-2 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-orange-400 group">
+            Read More
+            <FaArrowRight className="transition-transform duration-300 ease-in-out rotate-[45deg] group-hover:rotate-[0deg]" />
+          </p>
+        </div>
+      </div>
+
+      {/* Card 4 */}
+      <div className="relative w-full max-w-sm overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 ease-out hover:shadow-2xl">
+        
+        <img
+          src="/ux_4.jpg"
+          alt="UX Design 4"
+          className="w-full h-[350px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        />
+
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-56 aspect-square flex-shrink-0 rounded-full bg-orange-400/80 
+          flex items-center justify-center p-4
+
+          transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+
+          group-hover:scale-x-125 group-hover:scale-y-75
+          group-hover:translate-y-40
+          group-hover:opacity-0
+          ">
+            <p className="text-white font-extrabold text-center leading-[1.1]">
+              <span className="block text-2xl sm:text-3xl">Web</span>
+              <span className="block text-2xl sm:text-3xl">Development</span>
+            </p>
+          </div>
+        </div>
+
+        <div className="absolute inset-0 bg-black/60 
+        flex flex-col items-center justify-center text-center p-4
+
+        -translate-y-[105%]
+        transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
+        delay-200
+
+        group-hover:translate-y-0">
+          <p className="text-white mb-3 text-sm sm:text-base">
+            Crafting websites, web applications, and custom software,
+            along with creating web portals for specific business
+            purposes.
+          </p>
+          <p className="flex items-center gap-2 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-orange-400 group">
+            Read More
+            <FaArrowRight className="transition-transform duration-300 text-white ease-in-out rotate-[45deg] group-hover:rotate-[0deg]" />
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* card section */}
 
       <section className="w-full px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
