@@ -17,18 +17,35 @@ const BreadcrumbWrapper = () => {
 
   const items = [
     { label: "Home", href: "/" },
-    ...segments.map((_, index) => {
-      const path = "/" + segments.slice(0, index + 1).join("/");
+    ...segments.map((segment, index, arr) => {
+      const path = "/" + arr.slice(0, index + 1).join("/");
 
       const match = menuItems.find((item) => item.href === path);
-      const label = match?.label || formatLabel(segments[index]);
+
+      let label = match?.label || formatLabel(segment);
+
+      if (segment === "industries") {
+        label = "Success Stories";
+      }
+
+      if (segment === "news") {
+  label = "News Details";
+}
 
       return {
         label,
-        href: index === segments.length - 1 ? undefined : path,
+        href: index === arr.length - 1 ? undefined : path,
       };
     }),
   ];
+
+  if (pathname.startsWith("/industries/") && items.length > 2) {
+    items.splice(2);
+  }
+
+  if (pathname.startsWith("/news/") && items.length > 2) {
+  items.splice(2);
+}
 
   return <BannerSection items={items} />;
 };
