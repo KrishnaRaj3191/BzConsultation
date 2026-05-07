@@ -1469,7 +1469,7 @@ if (item.type === "bullet-list") {
               { name: "AI Medical Imaging", img: "/medical.jpg" }
             ].map((item, i) => (
               <motion.div whileHover={{ y: -10 }} key={i} className="group cursor-pointer">
-                <div className="w-full h-[350px] overflow-hidden">
+                <div className="w-full h-[350px] overflow-hidden mb-1">
                   <img src={item.img} className="w-full h-full object-cover" alt={item.name} />
                 </div>
                 <h4 className="text-2xl text-black dark:text-white font-black">{item.name}</h4>
