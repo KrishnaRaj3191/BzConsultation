@@ -3,16 +3,13 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 import CustomCursor from "@/components/CustomCursor";
-import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ModeToggle } from "@/components/Toggle";
 import Footer from "@/components/Footer";
-import ContactLocations from "@/components/Contact";
 import PageLoader from "@/components/PageLoader";
 import Navbar from "@/components/Navbar";
 import WhatsAppBtn from "@/components/WhatsAppBtn";
 import ProgressBar from "@/components/ProgressBar/ProgressBar";
-import BreadcrumbWrapper from "@/components/BreadcrumbWrapper";
 
 import AnimationProvider from "@/components/AnimationProvider";
 

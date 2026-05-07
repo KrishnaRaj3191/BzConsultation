@@ -103,7 +103,7 @@ export default function HomeReview() {
             </h5>
             <div className="testimonial-three__heading-row">
               <h2 className="section-title__title">
-                What they 're taking
+                What they&apos;re taking
                 <br /> about us
               </h2>
               <div className="testimonial-three__arrows">

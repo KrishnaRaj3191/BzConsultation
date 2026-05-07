@@ -1,17 +1,6 @@
 "use client";
 import React, { useActionState } from "react";
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import Image from "next/image";
 import Link from "next/link";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useTheme } from "next-themes";
@@ -55,7 +44,8 @@ const validateForm = async (
 
 const ConsultationForm = () => {
   const [state, formAction] = useActionState(validateForm, { errors: {} });
-  const { theme, setTheme } = useTheme();
+  const {theme}=useTheme()
+  
   return (
     <section className="py-15 px-4 bg-white dark:bg-black">
       <form action={formAction}>
@@ -327,8 +317,8 @@ const ConsultationForm = () => {
         </div>
 
         <div className="max-w-4xl mx-auto text-center space-y-8 mt-16 px-4">
-          <Link
-            href="/consult"
+          <button
+            type="submit"
             className="relative inline-flex items-center justify-center 
              px-6 sm:px-8 lg:px-10 py-3 sm:py-4
              bg-primary border  hover:border-black
@@ -354,7 +344,7 @@ const ConsultationForm = () => {
             >
               Click to Schedule
             </span>
-          </Link>
+          </button>
 
           <h4 className="text-xl sm:text-2xl md:text-4xl  font-bold">
             Our Team will contact you!

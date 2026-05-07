@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 
 import { Plus_Jakarta_Sans } from "next/font/google";
+import img from "next/image";
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -18,7 +19,7 @@ const Slide = () => {
           >
             {/* ===== SLIDE 1 ===== */}
             <div className="min-w-full h-full relative flex items-end">
-              {/* Image */}
+              {/* img */}
               <img
                 src="https://bzanalytics.ai/assets/images/blog/rag-l.jpg"
                 className="absolute inset-0 w-full h-[300px] sm:h-[550px] object-cover rounded-2xl"

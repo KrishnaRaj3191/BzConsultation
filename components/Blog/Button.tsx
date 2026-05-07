@@ -24,7 +24,7 @@ transition-all duration-300">
       text-[18px] font-medium tracking-[0.5px]
       px-[11px] py-[11px] h-[58.95px]
       transition-all duration-300 hover:bg-[#18e4cd]">
-        Editor's Pick
+        Editor&apos;s Pick
       </button>
 
       <button className="bg-transparent  border-[1.6px] border-[rgb(17,142,195)] rounded-[10px]

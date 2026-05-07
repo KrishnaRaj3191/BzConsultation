@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Link from "next/link";
+import img from "next/image";
 
 type News = {
   id: number;
@@ -29,7 +30,7 @@ const Slide = () => {
       title: (
         <>
           From Vision to Reality: <br />
-          BzAnalytics's Journey from <br /> 2020 to 2023
+          BzAnalytics&apos;s Journey from <br /> 2020 to 2023
         </>
       ),
       category: "News",
@@ -86,7 +87,7 @@ const Slide = () => {
               href={`/news/${news.slug}`}
               className="min-w-full h-full relative flex items-end"
             >
-              {/* Image */}
+              {/* img */}
               <img
                 src={news.image}
                 className="absolute inset-0 w-full h-[300px] sm:h-[550px] object-cover rounded-2xl"

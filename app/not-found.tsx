@@ -15,7 +15,7 @@ export default function NotFound() {
 
         {/* Image */}
         <div className=" lg:mt-[-130px] md:mt-[-130px]  mt-[-55px] w-full flex justify-end sm:justify-end md:-ms-13 lg:-ms-15 -ms-5 bounce">
-          <img
+          <Image
             className="w-[100px] sm:w-[220px] md:w-[260px] lg:w-full h-auto"
             src="/404.png"
             alt="404 illustration"

@@ -1,7 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { FaRegCircle } from "react-icons/fa";
-import { Button } from "./ui/button";
 import { RxDotFilled } from "react-icons/rx";
 import Marquee from "react-fast-marquee";
 import Link from "next/link";
@@ -9,7 +7,7 @@ import { FiArrowDownRight } from "react-icons/fi";
 import { IoSettings } from "react-icons/io5";
 import { BiCodeBlock } from "react-icons/bi";
 import "aos";
-import Image from "next/image";
+import img from "next/image";
 import HomeReview from "./about/HomeReview";
 
 import { FaArrowRight } from "react-icons/fa6";
@@ -194,7 +192,7 @@ const Home = ({ showHero = true }: HomeProps) => {
     },
     {
       id: 3,
-      title: "From Vision to Reality: BzAnalytics's Journey from 2020 to 2023",
+      title: "From Vision to Reality: BzAnalytics&apos;s Journey from 2020 to 2023",
       category: "Journey",
       date: "16 APR",
       image: "/newsimage3.jpg",
@@ -222,7 +220,7 @@ const Home = ({ showHero = true }: HomeProps) => {
               {" "}
               {/* adjust based on navbar height */}
               <div
-                style={{ backgroundImage: `url(${homeSlide[currentIndex].img})` }}
+                style={{ backgroundimg: `url(${homeSlide[currentIndex].img})` }}
                 className="w-full h-[calc(100vh-80px)] bg-center bg-no-repeat bg-cover absolute inset-0"
               ></div>
             </div>
@@ -318,7 +316,7 @@ const Home = ({ showHero = true }: HomeProps) => {
               UNLEASHING YOUR MAXIMUM POTENTIAL
             </span>
             <span className="mr-10 tracking-wider">
-              LET'S START WORKING TOGETHER
+              LET&apos;S START WORKING TOGETHER
             </span>
           </Marquee>
         </div>
@@ -460,11 +458,11 @@ const Home = ({ showHero = true }: HomeProps) => {
            group-hover:translate-x-3 hover:!translate-x-0
            hover:scale-110 hover:z-20"
                 >
-                  {/* Image */}
-                  <Image
+                  {/* img */}
+                  <img
                     src={card.img}
                     alt={card.title}
-                    fill
+                     
                     className="object-cover "
                   />
 
@@ -506,7 +504,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                 style={{ letterSpacing: "1px" }}
               >
                 <RxDotFilled className="min-w-[24px]" size={24} />
-                BzAnalytics works with the world's leading Enterprises, SMEs &
+                BzAnalytics works with the world&apos;s leading Enterprises, SMEs &
                 Startups – to plan, develop, test and expand their digital
                 initiatives.
               </li>
@@ -530,6 +528,8 @@ const Home = ({ showHero = true }: HomeProps) => {
             {/* Card 1 */}
             <div className="relative w-full max-w-sm overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 ease-out hover:shadow-2xl">
               <img
+              width={600}
+              height={350}
                 src="/ux_1.jpg"
                 alt="UX Design"
                 className="w-full h-[350px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
@@ -581,6 +581,8 @@ const Home = ({ showHero = true }: HomeProps) => {
             {/* Card 2 */}
             <div className="relative w-full max-w-sm overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 ease-out hover:shadow-2xl">
               <img
+               width={600}
+              height={350}
                 src="/ux_2.jpg"
                 alt="UX Design 2"
                 className="w-full h-[350px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
@@ -620,7 +622,7 @@ const Home = ({ showHero = true }: HomeProps) => {
               >
                 <p className="text-white mb-3 text-sm sm:text-base">
                   Flexible teams for custom software development, scaling, and
-                  extending your internal team's capabilities, led by dedicated
+                  extending your internal team&apos;s capabilities, led by dedicated
                   developers and product owners.
                 </p>
                 <p className="flex items-center gap-2 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-orange-400 group">
@@ -633,6 +635,8 @@ const Home = ({ showHero = true }: HomeProps) => {
             {/* Card 3 */}
             <div className="relative w-full max-w-sm overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 ease-out hover:shadow-2xl">
               <img
+               width={600}
+              height={350}
                 src="/ux_3.jpg"
                 alt="UX Design 3"
                 className="w-full h-[350px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
@@ -686,6 +690,8 @@ const Home = ({ showHero = true }: HomeProps) => {
             {/* Card 4 */}
             <div className="relative w-full max-w-sm overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 ease-out hover:shadow-2xl">
               <img
+               width={600}
+              height={350}
                 src="/ux_4.jpg"
                 alt="UX Design 4"
                 className="w-full h-[350px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
@@ -827,6 +833,7 @@ const Home = ({ showHero = true }: HomeProps) => {
               <img
                 className="w-full h-full object-cover relative transition-all duration-300 ease-in-out dark:mix-blend-normal mix-blend-luminosity"
                 src="/dubai.jpg"
+                 
                 alt="bzMart"
                 loading="lazy"
               />
@@ -868,6 +875,7 @@ const Home = ({ showHero = true }: HomeProps) => {
               <img
                 className="w-full h-full object-cover relative transition-all duration-300 ease-in-out dark:mix-blend-normal mix-blend-luminosity"
                 src="/bzmart.jpg"
+                 
                 alt="bzMart"
                 loading="lazy"
               />
@@ -911,6 +919,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                 src="/medical.jpg"
                 alt="Medical AI"
                 loading="lazy"
+                 
               />
             </div>
           </div>
@@ -952,6 +961,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                 src="/turf.jpg"
                 alt="Turf"
                 loading="lazy"
+                 
               />
             </div>
           </div>
@@ -1090,7 +1100,7 @@ const Home = ({ showHero = true }: HomeProps) => {
       >
         {/* Background */}
         <div className="absolute inset-0 flex items-start justify-center">
-          <Image
+          <img
             alt="award"
             src="/award-bg.png"
             width={645}
@@ -1111,7 +1121,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                 100+APIs that can connect with your existing infrastructure and
                 3rd party apps
               </p>
-              <img src="/award-icon.png" className="w-6 mt-2.5" />
+              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
 
             {/* Card 2 */}
@@ -1122,7 +1132,7 @@ const Home = ({ showHero = true }: HomeProps) => {
               <p className="award_title text-white font-bold text-xl sm:text-">
                 Deploy on any cloud/on-premise environment
               </p>
-              <img src="/award-icon.png" className="w-6 mt-2.5" />
+              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
 
             <div
@@ -1133,7 +1143,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                 Improved customer and employee experience via mobile and web
                 apps.
               </p>
-              <img src="/award-icon.png" className="w-6 mt-2.5" />
+              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
 
             {/* Card 4 */}
@@ -1145,12 +1155,12 @@ const Home = ({ showHero = true }: HomeProps) => {
                 Basic to advance machine learning models that fits into a
                 different level of data maturity
               </p>
-              <img src="/award-icon.png" className="w-6 mt-2.5" />
+              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
           </div>
 
           <div className="">
-            <Image
+            <img
               alt="award"
               src="/award.png"
               width={314}
@@ -1173,7 +1183,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                 100+APIs that can connect with your existing infrastructure and
                 3rd party apps
               </p>
-              <img src="/award-icon.png" className="w-6 mt-2.5" />
+              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
 
             {/* Card 2 */}
@@ -1184,12 +1194,12 @@ const Home = ({ showHero = true }: HomeProps) => {
               <p className="award_title text-white font-bold text-xl sm:text-">
                 Deploy on any cloud/on-premise environment
               </p>
-              <img src="/award-icon.png" className="w-6 mt-2.5" />
+              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
           </div>
 
-          {/* Center Image */}
-          <Image
+          {/* Center img */}
+          <img
             alt="award"
             src="/award.png"
             width={314}
@@ -1208,7 +1218,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                 Improved customer and employee experience via mobile and web
                 apps.
               </p>
-              <img src="/award-icon.png" className="w-6 mt-2.5" />
+              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
 
             {/* Card 4 */}
@@ -1220,7 +1230,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                 Basic to advance machine learning models that fits into a
                 different level of data maturity
               </p>
-              <img src="/award-icon.png" className="w-6 mt-2.5" />
+              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
           </div>
         </div>
@@ -1249,6 +1259,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                 3rd party apps
               </p>
               <img
+              alt="icon"
                 src="/award-icon.png"
                 className="mt-2.5 group-hover:scale-90 transition-all duration-1000 ease-in-out"
               />
@@ -1263,6 +1274,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                 Deploy on any cloud/on-premise environment
               </p>
               <img
+              alt="icon"
                 src="/award-icon.png"
                 className=" mt-2.5 group-hover:scale-90 transition-all duration-1000 ease-in-out"
               />
@@ -1276,7 +1288,7 @@ const Home = ({ showHero = true }: HomeProps) => {
             data-aos-duration="3000"
             className="award-trophy mt-16"
           >
-            <Image
+            <img
               alt="award"
               src="/award.png"
               width={314}
@@ -1301,6 +1313,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                 apps.
               </p>
               <img
+              alt="icon"
                 src="/award-icon.png"
                 className=" mt-2.5 group-hover:scale-90 transition-all duration-1000 ease-in-out"
               />
@@ -1316,6 +1329,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                 different level of data maturity
               </p>
               <img
+              alt="icon"
                 src="/award-icon.png"
                 className=" mt-2.5 group-hover:scale-90 transition-all duration-1000 ease-in-out"
               />
@@ -1349,7 +1363,7 @@ const Home = ({ showHero = true }: HomeProps) => {
             <h2
               style={{
                 fontSize: "45px",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontFamily: "&apos;Plus Jakarta Sans&apos;, sans-serif",
                 fontWeight: 800,
                 color: "#ffffff",
                 margin: 0,
@@ -1378,10 +1392,10 @@ const Home = ({ showHero = true }: HomeProps) => {
                 >
                   <div className="relative mx-auto mb-7 h-44 w-44 rounded-full border-[3px] border-[#f5900d] bg-black p-1.5 sm:h-52 sm:w-52">
                     <div className="work-process-one__item__thumb relative h-full w-full overflow-hidden rounded-full bg-black">
-                      <Image
+                      <img
                         src={step.image}
                         alt={step.title}
-                        fill
+                         
                         className="object-cover"
                       />
                     </div>
@@ -1423,7 +1437,7 @@ const Home = ({ showHero = true }: HomeProps) => {
                     className="mx-auto max-w-[390px]"
                     style={{
                       fontFamily:
-                        "var(--ogency-font, 'Plus Jakarta Sans', sans-serif)",
+                        "var(--ogency-font,'Plus Jakarta Sans', sans-serif)",
                       fontSize: "16px",
                       fontWeight: 500,
                       lineHeight: "30px",
@@ -1474,9 +1488,9 @@ const Home = ({ showHero = true }: HomeProps) => {
                 className="block"
               >
                 <div className="group cursor-pointer">
-                  {/* Image Section */}
+                  {/* img Section */}
                   <div className="relative overflow-hidden group/img">
-                    <Image
+                    <img
                       src={item.image}
                       alt={item.title}
                       width={500}

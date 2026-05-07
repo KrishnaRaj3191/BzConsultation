@@ -1,14 +1,13 @@
 "use client";
 import React, { useEffect } from "react";
-import Marquee from "react-fast-marquee";
 import { FaCheck } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import BreadcrumbWrapper from "@/components/BreadcrumbWrapper";
+import img from "next/image";
 
 interface Service {
   icon: string;
@@ -17,30 +16,10 @@ interface Service {
   link: string;
 }
 
-const HeroBackground = () => {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
-
-  return (
-    <div
-      className="absolute inset-0 w-full h-full bg-no-repeat bg-center bg-cover transition-all duration-500"
-      style={{
-        backgroundImage:
-          resolvedTheme === "dark" ? "url('/bg.jpg')" : "url('/bg.jpg')",
-      }}
-    />
-  );
-};
 
 const page = () => {
   const [services, setServices] = useState<Service[]>([]);
-
-  const [showArrow, setShowArrow] = useState(false);
-
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     AOS.init({
@@ -49,28 +28,7 @@ const page = () => {
     AOS.refresh();
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-
-      const progress = (scrollTop / docHeight) * 100;
-
-      setScrollProgress(progress);
-      setShowArrow(scrollTop > 200);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+ 
 
   useEffect(() => {
     fetch("/api/services")
@@ -101,11 +59,11 @@ const page = () => {
         </div>
 
         <p className="uppercase text-xs sm:text-sm md:text-sm mb-2">
-          What We're Offering
+          What We&apos;re Offering
         </p>
 
         <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-[46px] font-extrabold leading-12">
-          Services we're providing <br />
+          Services we&apos;re providing <br />
           to our customers
         </h1>
       </div>
@@ -264,7 +222,7 @@ const page = () => {
                   </h3>
                   <p className=" theme-text text-sm sm:text-base leading-relaxed">
                     Our team of seasoned professionals brings a wealth of
-                    expertise and experience to ensure your project's success.
+                    expertise and experience to ensure your project&apos;s success.
                   </p>
                 </div>
               </div>
@@ -291,7 +249,7 @@ const page = () => {
                 className="absolute w-[200%] h-[200%] object-contain animate-spin [animation-duration:4s]"
               />
 
-              {/* Main Oval Image */}
+              {/* Main Oval img */}
               <div className="w-[85%] h-[79%] rounded-[50%] -ms-10 overflow-hidden z-10 shadow-2xl">
                 <img
                   src="/man.png"
@@ -366,7 +324,7 @@ px-2 sm:px-3 md:px-4
             <div className="absolute inset-0 bg-black/60 -translate-y-full flex flex-col items-center justify-center text-center p-4 transition-transform duration-500 group-hover:translate-y-0">
               <p className="text-white mb-3 text-sm sm:text-base">
                 Flexible teams for custom software development, scaling, and
-                extending your internal team's capabilities, led by dedicated
+                extending your internal team&apos;s capabilities, led by dedicated
                 developers and product owners.
               </p>
               <p className="flex items-center gap-2 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out text-white hover:text-orange-400 group">
@@ -470,7 +428,7 @@ px-2 sm:px-3 md:px-4
             UNLEASHING YOUR MAXIMUM POTENTIAL
           </span>
           <span className="mx-5 tracking-wider">
-            LET'S START WORKING TOGETHER
+            LET&apos;S START WORKING TOGETHER
           </span>
         </div>
       </div>

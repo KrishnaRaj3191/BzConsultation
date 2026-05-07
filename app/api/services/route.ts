@@ -85,7 +85,7 @@ export async function GET() {
       icon: "/11.svg",
       title: "Java Development",
       description:
-        "Our skilled Java development team brings extensive expertise in crafting robust and scalable solutions, harnessing the power of Java's versatility to build high-performance applications that drive business growth and empower our clients with cutting-edge technology.",
+        "Our skilled Java development team brings extensive expertise in crafting robust and scalable solutions, harnessing the power of Java&apos;s versatility to build high-performance applications that drive business growth and empower our clients with cutting-edge technology.",
     },
     {
       link: "/services/web-development",

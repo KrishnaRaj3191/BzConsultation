@@ -1,22 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { Button } from "./ui/button";
-import { IoIosArrowForward } from "react-icons/io";
+
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -30,10 +18,9 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import Link from "next/link";
-import { menuItems } from "@/lib/menu";
-import Image from "next/image";
 import LanguageSelect from "./LanguageDrop";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
   const menuItems = [
@@ -46,7 +33,7 @@ const Navbar = () => {
     { label: "Contact Us", href: "/contact" },
   ];
 
-  const [openLang, setOpenLang] = useState(false);
+
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname=usePathname()
 
@@ -70,8 +57,10 @@ const Navbar = () => {
 
           {/* logo */}
           <div className="flex items-center">
-            <img
-              src="https://bzanalytics.ai/assets/bz/bq.png"
+            <Image
+              src="/bq.png"
+              width={150}
+              height={20}
               alt="BZ Analytics"
               className="w-[150px] lg:w-[140px] h-auto object-contain"
             />
@@ -138,8 +127,8 @@ after:bg-current"
               <SheetContent className="bg-black" side="left">
                 <SheetHeader>
                   <SheetTitle>
-                    <img
-                      src="https://bzanalytics.ai/assets/bz/bq.png"
+                    <Image
+                      src="/bq.png"
                       alt="BZ Analytics"
                       className="w-[85px] h-auto object-contain"
                     />
