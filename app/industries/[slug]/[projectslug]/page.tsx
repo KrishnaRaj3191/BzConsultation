@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import BreadcrumbWrapper from "@/components/BreadcrumbWrapper";
 
-// --- Type Definitions ---
-
 interface BulletItem {
   title: string;
   desc: string;
@@ -28,20 +26,20 @@ interface ContentItem {
   type: "text" | "image" | "grid" | "list" | "columns" | "image-grid" | "bullet-list" | "video";
   heading?: string;
   subheading?: string;
-  smallHeading?: string; // New: For tags or tiny titles
-  imageGridData?: ImageGridItem[]; // Array for the two images
+  smallHeading?: string; 
+  imageGridData?: ImageGridItem[]; 
   text?: string;
-  columnData?: ColumnItem[]; // Array for the 2-column text grid
-  points?: string[]; // Array for the tick marks
+  columnData?: ColumnItem[]; 
+  points?: string[]; 
   bulletListData?: BulletItem[];
   img?: string;
   imgdesc?: string;
   width?: string;
   height?: string;
-  mt?: string; // New property for Margin Top
+  mt?: string; 
   mb?: string;
   gap?: string;
-  reverse?: boolean; // If true, image on left, text on right
+  reverse?: boolean; 
   videoUrl?: string;
   autoPlay?: boolean;
   loop?: boolean;
@@ -53,8 +51,8 @@ interface Project {
   num: string;
   title: string;
   img: string;
-  width?: string;  // Added for main hero
-  height?: string; // Added for main hero
+  width?: string;  
+  height?: string; 
   content: ContentItem[];
 }
 
@@ -63,8 +61,6 @@ interface Industry {
   title: string;
   projects: Project[];
 }
-
-// --- Data ---
 
 const pageData: Industry[] = [
   {
@@ -75,7 +71,7 @@ const pageData: Industry[] = [
         num: "01",
         title: "Digital Twin of Dubai",
         img: "/dubai2.jpg",
-        width: "1150px", // Custom main image size
+        width: "1150px",
         height: "850px",
         content: [
           { 
@@ -107,7 +103,7 @@ const pageData: Industry[] = [
             type: "image", 
             img: "/dubai3.jpg", 
             width: "950px", 
-            height: "703px" // Specific inner image size
+            height: "703px" 
           }, 
           { 
             type: "text", 
@@ -443,19 +439,19 @@ const pageData: Industry[] = [
            smallHeading: "Elementary Analysis",
            text: "An elementary analysis on the data itself can reveal a lot of useful information about sales trends and customer behaviour. The above plot shows the profit margins from top selling products of the company over the years. Rice, Sugar and Edible oil remain the top three grossers. Products like home care, packaged foods etc are starting to contribute more in 2020 mainly due to people being confined to their homes during the pandemic.",
            img: "/inv1.png",
-           reverse: false // Text left, Image right
+           reverse: false 
           },
   {
     type: "grid",
     text: "The two plots here,reveal a very interesting story. The first plot shows the sales trend and margins over the last couple of years. the sales and margin have been steadily increasing until March 2020 after which there is a significant dip in sales. The dip in sales coincides with the start of country wide lock down in India due to the Corvid-19 pandemic situation. But the story doesn’t end there.",
     img: "/inv2.png",
-    reverse: true // Image left, Text right
+    reverse: true 
   },
   {
     type: "grid",
     text: "The second chart reveals that the sales of rice has gone down during the lockdown period. Rice is one thing that people would like to stock during uncertain periods like these, but still its sales has dropped, why? The reason for this cannot be found with the data that we have in hand. A closer look at other sources brings to light the fact that government has issued free ration of rice to all the people of the state during lockdown and it has impacted the sales figures of rice. This also highlights the need to correlate other sources like new articles with the data to bring out facts we otherwise would miss.",
     img: "/inv3.png",
-    reverse: false // Text left, Image right
+    reverse: false 
   },
   {
     type: "list",
@@ -479,7 +475,7 @@ const pageData: Industry[] = [
             type: "image", 
             img: "/inv4.png", 
             width: "888px", 
-            height: "569px" // Specific inner image size
+            height: "569px" 
           },
           {
     type: "columns",
@@ -556,8 +552,8 @@ const pageData: Industry[] = [
             { 
             type: "image", 
             img: "/scrp.png", 
-            width: "1150", 
-            height: "646" // Specific inner image size
+            width: "1150px", 
+            height: "646px" 
           },
           { 
             type: "text", 
@@ -1110,15 +1106,35 @@ const pageData: Industry[] = [
   }
 ];
 
-// --- Component ---
 
 export default function ProjectDetailPage() {
   const { slug, projectslug } = useParams();
   const router = useRouter();
 
-  // Find industry and project
   const industry = pageData.find((ind) => ind.slug === slug);
   const project = industry?.projects.find((p) => p.title.toLowerCase().replace(/\s+/g, '-') === projectslug);
+
+const allProjects = pageData.flatMap((industry) =>
+  industry.projects.map((project) => ({
+    ...project,
+    industrySlug: industry.slug,
+    projectSlug: project.title.toLowerCase().replace(/\s+/g, "-"),
+  }))
+);
+
+const currentProjectIndex = allProjects.findIndex(
+  (p) => p.projectSlug === projectslug
+);
+
+const previousProject =
+  currentProjectIndex > 0
+    ? allProjects[currentProjectIndex - 1]
+    : null;
+
+const nextProject =
+  currentProjectIndex < allProjects.length - 1
+    ? allProjects[currentProjectIndex + 1]
+    : null;
 
   if (!project) return <div className="bg-black h-screen text-white flex items-center justify-center">Project Not Found</div>;
 
@@ -1131,7 +1147,6 @@ export default function ProjectDetailPage() {
       </section>
 
       <main className="bg-white dark:bg-black">
-        {/* Main Hero Section with Dynamic Sizing */}
         <section className="relative w-full flex flex-col items-center justify-center overflow-hidden pt-20 bg-white dark:bg-black">
           <div className="mt-8 px-4 flex justify-center w-full">
              <img 
@@ -1193,7 +1208,7 @@ export default function ProjectDetailPage() {
               );
             }
 
-            // --- IMAGE GRID RENDERER (Two Images Side-by-Side) ---
+            // --- IMAGE GRID RENDERER  ---
 if (item.type === "image-grid") {
   return (
     <div 
@@ -1283,7 +1298,7 @@ if (item.type === "bullet-list") {
   );
 }
 
-            // --- NEW COLUMNS RENDERER (Multi-column Text) ---
+            // --- NEW COLUMNS RENDERER ---
             if (item.type === "columns") {
               return (
                 <div 
@@ -1298,7 +1313,7 @@ if (item.type === "bullet-list") {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: cIndex * 0.1 }}
-                      className="pt-10 pr-10 ps-15" // Spacing from Top (pt) and Right (pr)
+                      className="pt-10 pr-10 ps-15" 
                     >
 <h3 className="text-3xl md:text-[30px] font-extrabold mb-[15px] text-white">
   {col.heading}
@@ -1312,7 +1327,7 @@ if (item.type === "bullet-list") {
               );
             }
 
-            // --- LIST RENDERER (Action Points) ---
+            // --- LIST RENDERER ---
             if (item.type === "list") {
               return (
                 <div key={index} style={{ marginTop: item.mt || "0px", marginBottom: item.mb || "4rem" }}>
@@ -1344,7 +1359,7 @@ if (item.type === "bullet-list") {
               );
             }
 
-            // --- NEW GRID RENDERER (Side-by-Side) ---
+            // --- NEW GRID RENDERER ---
             if (item.type === "grid") {
               return (
                 <div 
@@ -1389,7 +1404,7 @@ if (item.type === "bullet-list") {
                   key={index}
                   style={{ 
                     marginTop: item.mt || "0px", 
-                    marginBottom: item.mb || "0rem" // Default mb if none provided
+                    marginBottom: item.mb || "0rem" 
                   }}
                   className="w-full mb-1 flex justify-start overflow-hidden"
                 >
@@ -1414,14 +1429,26 @@ if (item.type === "bullet-list") {
         {/* Navigation Section */}
         <section className="max-w-7xl mx-auto px-6 pb-32 mt-10">
           <div className="flex justify-between items-center border-t border-black dark:border-white/10 py-8 mb-20 border-b">
-            <button onClick={() => router.back()} className="flex items-center gap-4 group text-lg font-bold cursor-pointer dark:text-white">
+            <button onClick={() => {
+  if (previousProject) {
+    router.push(
+      `/industries/${previousProject.industrySlug}/${previousProject.projectSlug}`
+    );
+  }
+}} className="flex items-center gap-4 group text-lg font-bold cursor-pointer dark:text-white">
               <div className="p-4 rounded-full bg-[#101010] group-hover:bg-[#F5900D] transition-all">
                 <ChevronLeft className="text-white" />
               </div>
               <span className="group-hover:text-orange-400">Previous</span>
             </button>
             
-            <button className="flex items-center gap-4 group text-lg font-bold cursor-pointer dark:text-white">
+            <button onClick={() => {
+  if (nextProject) {
+    router.push(
+      `/industries/${nextProject.industrySlug}/${nextProject.projectSlug}`
+    );
+  }
+}} className="flex items-center gap-4 group text-lg font-bold cursor-pointer dark:text-white">
               <span className="group-hover:text-orange-400">Next</span>
               <div className="p-4 rounded-full bg-[#101010] group-hover:bg-[#F5900D] transition-all">
                 <ChevronRight className="text-white" />
@@ -1442,7 +1469,7 @@ if (item.type === "bullet-list") {
               { name: "AI Medical Imaging", img: "/medical.jpg" }
             ].map((item, i) => (
               <motion.div whileHover={{ y: -10 }} key={i} className="group cursor-pointer">
-                <div className="w-full h-[350px] overflow-hidden mb-4">
+                <div className="w-full h-[350px] overflow-hidden">
                   <img src={item.img} className="w-full h-full object-cover" alt={item.name} />
                 </div>
                 <h4 className="text-2xl text-black dark:text-white font-black">{item.name}</h4>
