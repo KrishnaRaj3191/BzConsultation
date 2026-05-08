@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import BreadcrumbWrapper from "@/components/BreadcrumbWrapper";
-import Header from "@/components/Header";
+import img from "next/image";
 
 
 

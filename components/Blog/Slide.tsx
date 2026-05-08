@@ -1,8 +1,8 @@
 "use client";
-
 import React, { useState } from "react";
 
 import { Plus_Jakarta_Sans } from "next/font/google";
+import img from "next/image";
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -19,7 +19,7 @@ const Slide = () => {
           >
             {/* ===== SLIDE 1 ===== */}
             <div className="min-w-full h-full relative flex items-end">
-              {/* Image */}
+              {/* img */}
               <img
                 src="https://bzanalytics.ai/assets/images/blog/rag-l.jpg"
                 className="absolute inset-0 w-full h-[300px] sm:h-[550px] object-cover rounded-2xl"
@@ -35,10 +35,12 @@ const Slide = () => {
   shadow-2xl border border-gray-200
   ${plusJakarta.className}`}
               >
-    <h1 className="flex items-center text-xs sm:text-sm font-semibold text-[rgb(73,0,167)] mb-3 sm:mb-4">
-  <span className="w-[16px] h-[16px] bg-[rgb(73,0,167)] rounded-full mr-2"></span>
-  <span className="text-[14px] font-normal">Technology & Business</span>
-</h1>
+                <h1 className="flex items-center text-xs sm:text-sm font-semibold text-[rgb(73,0,167)] mb-3 sm:mb-4">
+                  <span className="w-[16px] h-[16px] bg-[rgb(73,0,167)] rounded-full mr-2"></span>
+                  <span className="text-[14px] font-normal">
+                    Technology & Business
+                  </span>
+                </h1>
 
                 <h1 className="text-lg sm:text-4xl text-black leading-snug mb-3 sm:mb-5 font-semibold">
                   Bridging the Gap: How RAG <br />
@@ -72,9 +74,11 @@ const Slide = () => {
   ${plusJakarta.className}`}
               >
                 <h1 className="flex items-center text-xs sm:text-sm font-semibold text-[rgb(73,0,167)] mb-3 sm:mb-4">
-  <span className="w-[16px] h-[16px] bg-[rgb(73,0,167)] rounded-full mr-2"></span>
-  <span className="text-[14px] font-normal">Technology & Business</span>
-</h1>
+                  <span className="w-[16px] h-[16px] bg-[rgb(73,0,167)] rounded-full mr-2"></span>
+                  <span className="text-[14px] font-normal">
+                    Technology & Business
+                  </span>
+                </h1>
 
                 <h1 className="text-lg sm:text-4xl text-black leading-snug mb-3 sm:mb-5 font-semibold">
                   Unlocking the Future of <br />
@@ -107,10 +111,12 @@ const Slide = () => {
   shadow-2xl border border-gray-200
   ${plusJakarta.className}`}
               >
-                  <h1 className="flex items-center text-xs sm:text-sm font-semibold text-[rgb(73,0,167)] mb-3 sm:mb-4">
-  <span className="w-[16px] h-[16px] bg-[rgb(73,0,167)] rounded-full mr-2"></span>
-  <span className="text-[14px] font-normal">Technology & Business</span>
-</h1>
+                <h1 className="flex items-center text-xs sm:text-sm font-semibold text-[rgb(73,0,167)] mb-3 sm:mb-4">
+                  <span className="w-[16px] h-[16px] bg-[rgb(73,0,167)] rounded-full mr-2"></span>
+                  <span className="text-[14px] font-normal">
+                    Technology & Business
+                  </span>
+                </h1>
 
                 <h1 className="text-lg sm:text-4xl text-black leading-snug mb-3 sm:mb-5 font-semibold">
                   Application Of Machine <br />
@@ -144,9 +150,11 @@ const Slide = () => {
   ${plusJakarta.className}`}
               >
                 <h1 className="flex items-center text-xs sm:text-sm font-semibold text-[rgb(73,0,167)] mb-3 sm:mb-4">
-  <span className="w-[16px] h-[16px] bg-[rgb(73,0,167)] rounded-full mr-2"></span>
-  <span className="text-[14px] font-normal">Technology & Business</span>
-</h1>
+                  <span className="w-[16px] h-[16px] bg-[rgb(73,0,167)] rounded-full mr-2"></span>
+                  <span className="text-[14px] font-normal">
+                    Technology & Business
+                  </span>
+                </h1>
 
                 <h1 className="text-lg sm:text-4xl text-black leading-snug mb-3 sm:mb-5 font-semibold">
                   AI In Ecommerce

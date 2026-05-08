@@ -1,29 +1,5 @@
 import ConsultationForm from "@/components/ConsultationForm";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import "animate.css";
 import { GoDotFill } from "react-icons/go";
-import BannerSection from "@/components/BannerSection";
 import BreadcrumbWrapper from "@/components/BreadcrumbWrapper";
 import ContactLocations from "@/components/Contact";
 
@@ -57,10 +33,13 @@ const page = () => {
           </h2>
 
           {/* Description */}
-          <p style={{letterSpacing:"0.5px",lineHeight:"30px"}} className="text-[16px] p-2 md:text-base text-black dark:text-gray-300 font-medium px-2 md:px-0">
+          <p
+            style={{ letterSpacing: "0.5px", lineHeight: "30px" }}
+            className="text-[16px] p-2 md:text-base text-black dark:text-gray-300 font-medium px-2 md:px-0"
+          >
             We’re ready to become your personal guide through the software
             experience as we bring your app or website to life. Use the form
-            below to pick a time that works best for you, and we'll jump on a
+            below to pick a time that works best for you, and we&apos;ll jump on a
             15-minute Google Meet discovery chat.
           </p>
         </div>

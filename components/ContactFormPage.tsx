@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, SetStateAction } from "react";
+import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useTheme } from "next-themes";
 export default function ContactFormPage() {
@@ -269,7 +269,7 @@ export default function ContactFormPage() {
 
     {/* TIMELINE */}
     <h3 className="font-bold text-[16px] tracking-[0.5px] leading-[30px]  mb-4">
-      What's your timeline?
+      What&apos;s your timeline?
     </h3>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

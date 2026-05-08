@@ -1,6 +1,6 @@
 "use client";
 import BreadcrumbWrapper from "@/components/BreadcrumbWrapper";
-import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const services = [
   "AI Development",
@@ -19,37 +19,13 @@ const services = [
 ];
 
 const page = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [showArrow, setShowArrow] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-
-      const progress = (scrollTop / docHeight) * 100;
-
-      setScrollProgress(progress);
-      setShowArrow(scrollTop > 200);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   return (
     <div>
       {/* ================= HERO ================= */}
       <section className="page-header relative consultant min-h-[50vh] sm:min-h-[40vh] md:min-h-[60vh] flex items-center">
-        <div className="absolute h-full bg-img inset-0 bg-gray-200 dark:bg-gray-900" />
+        <div className="absolute h-full bg-Image inset-0 bg-gray-200 dark:bg-gray-900" />
         <div className="absolute overlay hidden dark:block" />
 
         <BreadcrumbWrapper />
@@ -77,7 +53,7 @@ const page = () => {
           <div className="w-full lg:w-3/4 flex flex-col gap-6 order-2">
             {/* Main Image */}
             <div className="order-1">
-              <img
+              <Image
                 src="/ai_development.jpg"
                 alt="AI"
                 className="w-full h-full object-cover"
@@ -102,7 +78,7 @@ const page = () => {
                 to transform your business and drive unparalleled growth. With a
                 team of highly skilled AI experts and data scientists, we are
                 committed to delivering innovative and tailored AI solutions to
-                meet your unique business needs. Whether you're a startup or an
+                meet your unique business needs. Whether you&apos;re a startup or an
                 established enterprise, our AI development services will help
                 you stay ahead of the competition and embrace the future of
                 technology.
@@ -177,7 +153,7 @@ const page = () => {
               <p className="mt-7 leading-loose text-[16px]">
                 {" "}
                 Tailored Solutions:We understand that every business is unique.
-                That's why our AI development services are customized to address
+                That&apos;s why our AI development services are customized to address
                 your specific challenges and goals, ensuring the best possible
                 outcomes.{" "}
               </p>{" "}
@@ -195,7 +171,7 @@ const page = () => {
               </p>{" "}
               <p className="mt-7 leading-loose text-[16px]">
                 {" "}
-                Continuous Support:Our partnership doesn't end with the
+                Continuous Support:Our partnership doesn&apos;t end with the
                 development phase. We offer ongoing support and maintenance to
                 ensure the optimal performance of your AI applications.{" "}
               </p>
@@ -206,7 +182,7 @@ const page = () => {
             <div className="flex flex-col lg:flex-row gap-10 order-3 items-center">
               {/* Circular Image */}
               <div className="order-1">
-                <img
+                <Image
                   className="rounded-full w-83 h-83 object-cover"
                   src="/r.jpg"
                   alt=""

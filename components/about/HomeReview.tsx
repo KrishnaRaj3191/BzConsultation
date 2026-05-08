@@ -52,6 +52,7 @@ export default function HomeReview() {
   ];
 
   const visibleTrack = [...testimonials, ...testimonials];
+  const marqueeText = "\u00a0Our satisfied ";
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
@@ -76,10 +77,20 @@ export default function HomeReview() {
       <section className="about-page slider-text-one">
         <div className="slider-text-one__animate-text">
           <span>
-            &nbsp;Our satisfied <span>&amp;</span> happy clients.&nbsp;&nbsp;
+            {marqueeText}
+            <span>&amp;</span> happy clients.&nbsp;&nbsp;
           </span>
           <span>
-            &nbsp;Our satisfied <span>&amp;</span> happy clients.&nbsp;&nbsp;
+            {marqueeText}
+            <span>&amp;</span> happy clients.&nbsp;&nbsp;
+          </span>
+          <span>
+            {marqueeText}
+            <span>&amp;</span> happy clients.&nbsp;&nbsp;
+          </span>
+          <span>
+            {marqueeText}
+            <span>&amp;</span> happy clients.&nbsp;&nbsp;
           </span>
         </div>
       </section>
@@ -92,7 +103,7 @@ export default function HomeReview() {
             </h5>
             <div className="testimonial-three__heading-row">
               <h2 className="section-title__title">
-                What they 're taking
+                What they&apos;re taking
                 <br /> about us
               </h2>
               <div className="testimonial-three__arrows">

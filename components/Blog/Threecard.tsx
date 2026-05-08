@@ -1,3 +1,4 @@
+import img from 'next/image'
 import React from 'react'
 
 const Threecard = () => {

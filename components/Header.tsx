@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,7 +26,7 @@ export default function Header() {
     <header className="w-full bg-black text-white px-6 space-x-[0.5px] lg:px-12 py-5 flex items-center justify-between relative">
       {/* LOGO */}
       <div className="flex items-center">
-        <img
+        <Image
           src="https://bzanalytics.ai/assets/bz/bq.png"
           alt="BZ Analytics"
           className="w-[120px] lg:w-[140px] h-auto object-contain"
@@ -63,7 +64,7 @@ after:bg-current"
             onClick={() => setOpen(!open)}
             className="flex items-center gap-2 text-white hover:text-gray-300 transition-all duration-300"
           >
-            <img src="/usa.png" alt="EN" className="w-5 h-5 rounded-full" />
+            <Image src="/usa.png" alt="EN" className="w-5 h-5 rounded-full" />
             <span>EN</span>
             <span
               className={`transition-transform duration-300 ${
@@ -78,12 +79,12 @@ after:bg-current"
           {open && (
             <div className="absolute right-0 mt-3 z-50 w-40 rounded-md bg-[#1f1f1f] text-white shadow-lg overflow-hidden">
               <button className="flex items-center gap-3 px-4 py-3 w-full hover:bg-neutral-800">
-                <img src="/india.png" className="w-5 h-5 rounded-full" />
+                <Image alt="flag" src="/india.png" className="w-5 h-5 rounded-full" />
                 <span>HI</span>
               </button>
 
               <button className="flex items-center gap-3 px-4 py-3 w-full hover:bg-neutral-800">
-                <img src="/uae.png" className="w-5 h-5 rounded-full" />
+                <Image alt="flag" src="/uae.png" className="w-5 h-5 rounded-full" />
                 <span>AR</span>
               </button>
             </div>
