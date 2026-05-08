@@ -15,37 +15,52 @@ const BreadcrumbWrapper = () => {
 
   const segments = pathname.split("/").filter(Boolean);
 
+  const isBlogDetail =
+    segments.length === 2 && segments[0] === "blogs";
+
+  const isIndustriesDetail =
+    segments.length >= 2 && segments[0] === "industries";
+
+  const isNewsDetail =
+    segments.length >= 2 && segments[0] === "news";
+
   const items = [
     { label: "Home", href: "/" },
-    ...segments.map((segment, index, arr) => {
-      const path = "/" + arr.slice(0, index + 1).join("/");
 
-      const match = menuItems.find((item) => item.href === path);
+    ...segments
+      .map((segment, index) => {
+        if (
+          (isBlogDetail && index === 1) ||
+          (isIndustriesDetail && index > 0) ||
+          (isNewsDetail && index > 0)
+        ) {
+          return null;
+        }
 
-      let label = match?.label || formatLabel(segment);
+        const path = "/" + segments.slice(0, index + 1).join("/");
 
-      if (segment === "industries") {
-        label = "Success Stories";
-      }
+        const match = menuItems.find((item) => item.href === path);
 
-      if (segment === "news") {
-  label = "News Details";
-}
+        let label = match?.label || formatLabel(segment);
 
-      return {
-        label,
-        href: index === arr.length - 1 ? undefined : path,
-      };
-    }),
+        if (segment === "industries") {
+          label = "Success Stories";
+        }
+
+        if (segment === "news") {
+          label = "News Details";
+        }
+
+        return {
+          label,
+          href: index === segments.length - 1 ? undefined : path,
+        };
+      })
+      .filter(
+        (item): item is { label: string; href: string | undefined } =>
+          Boolean(item)
+      ),
   ];
-
-  if (pathname.startsWith("/industries/") && items.length > 2) {
-    items.splice(2);
-  }
-
-  if (pathname.startsWith("/news/") && items.length > 2) {
-  items.splice(2);
-}
 
   return <BannerSection items={items} />;
 };
